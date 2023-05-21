@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
     const q = "select * from domains";
     db.query(q,(err,data)=>{
 if (err) return res.json(err);
-return res.json(data);
+return res.send(data);
     })
 
 
