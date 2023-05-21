@@ -5,7 +5,7 @@ var db = mysql.createPool({
     user:"nethrasiva",
     password:"Welcome123!",
     database:"cutoff",
-
+    port: 3306,
     ssl: {ca: fs.readFileSync("./DigiCertGlobalRootCA.crt.pem")}
 });
 // db.connect(
