@@ -3,7 +3,11 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  const q = "select * from domains";
+  db.query(q,(err,data)=>{
+if (err) return res.json(err);
+return res.json(data);
+  })
 });
 
 module.exports = router;
