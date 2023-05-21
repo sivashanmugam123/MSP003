@@ -6,7 +6,8 @@ var db = require('../utils/connection');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
 
-    const q = "select * from domains";
+    const domain_id =  req.query.domain_id
+    const q = "select * from courses where domain_id =" + domain_id ;
     db.query(q,(err,data)=>{
 if (err) return res.json(err);
 return res.json(data);
